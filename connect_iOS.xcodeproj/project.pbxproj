@@ -8,18 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		9351609625860EB800100937 /* connect_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351609525860EB800100937 /* connect_iOSApp.swift */; };
-		9351609825860EB800100937 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351609725860EB800100937 /* ContentView.swift */; };
 		9351609A25860EBB00100937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9351609925860EBB00100937 /* Assets.xcassets */; };
 		9351609D25860EBB00100937 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9351609C25860EBB00100937 /* Preview Assets.xcassets */; };
+		935160B12586225400100937 /* MenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935160A72586225400100937 /* MenuRowView.swift */; };
+		935160B22586225400100937 /* WriteMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935160A82586225400100937 /* WriteMessage.swift */; };
+		935160B42586225400100937 /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935160AA2586225400100937 /* AddFriend.swift */; };
+		935160B52586225400100937 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935160AB2586225400100937 /* HomeView.swift */; };
+		935160B62586225400100937 /* SelectMessageFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935160AC2586225400100937 /* SelectMessageFriend.swift */; };
+		935160B72586225400100937 /* CehckMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935160AD2586225400100937 /* CehckMessage.swift */; };
+		935160B82586225400100937 /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935160AE2586225400100937 /* FriendListView.swift */; };
+		935160B92586225400100937 /* SelectMsgFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935160AF2586225400100937 /* SelectMsgFriend.swift */; };
+		935160C22586233400100937 /* FriendEntity.json in Resources */ = {isa = PBXBuildFile; fileRef = 935160C12586233400100937 /* FriendEntity.json */; };
+		935160C52586233B00100937 /* Friend2Entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 935160C42586233B00100937 /* Friend2Entity.json */; };
+		935160C82586234200100937 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935160C72586234200100937 /* Data.swift */; };
+		935160CB2586234800100937 /* FriendEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935160CA2586234700100937 /* FriendEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9351609225860EB800100937 /* connect_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = connect_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9351609525860EB800100937 /* connect_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = connect_iOSApp.swift; sourceTree = "<group>"; };
-		9351609725860EB800100937 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9351609925860EBB00100937 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9351609C25860EBB00100937 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9351609E25860EBB00100937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		935160A72586225400100937 /* MenuRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuRowView.swift; sourceTree = "<group>"; };
+		935160A82586225400100937 /* WriteMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteMessage.swift; sourceTree = "<group>"; };
+		935160AA2586225400100937 /* AddFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
+		935160AB2586225400100937 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		935160AC2586225400100937 /* SelectMessageFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMessageFriend.swift; sourceTree = "<group>"; };
+		935160AD2586225400100937 /* CehckMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CehckMessage.swift; sourceTree = "<group>"; };
+		935160AE2586225400100937 /* FriendListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
+		935160AF2586225400100937 /* SelectMsgFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMsgFriend.swift; sourceTree = "<group>"; };
+		935160C12586233400100937 /* FriendEntity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FriendEntity.json; sourceTree = "<group>"; };
+		935160C42586233B00100937 /* Friend2Entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Friend2Entity.json; sourceTree = "<group>"; };
+		935160C72586234200100937 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		935160CA2586234700100937 /* FriendEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +74,8 @@
 		9351609425860EB800100937 /* connect_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				9351609525860EB800100937 /* connect_iOSApp.swift */,
-				9351609725860EB800100937 /* ContentView.swift */,
+				935160C02586231200100937 /* Data */,
+				935160A62586225400100937 /* View */,
 				9351609925860EBB00100937 /* Assets.xcassets */,
 				9351609E25860EBB00100937 /* Info.plist */,
 				9351609B25860EBB00100937 /* Preview Content */,
@@ -67,6 +89,33 @@
 				9351609C25860EBB00100937 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		935160A62586225400100937 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9351609525860EB800100937 /* connect_iOSApp.swift */,
+				935160A72586225400100937 /* MenuRowView.swift */,
+				935160A82586225400100937 /* WriteMessage.swift */,
+				935160AA2586225400100937 /* AddFriend.swift */,
+				935160AB2586225400100937 /* HomeView.swift */,
+				935160AC2586225400100937 /* SelectMessageFriend.swift */,
+				935160AD2586225400100937 /* CehckMessage.swift */,
+				935160AE2586225400100937 /* FriendListView.swift */,
+				935160AF2586225400100937 /* SelectMsgFriend.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		935160C02586231200100937 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				935160C12586233400100937 /* FriendEntity.json */,
+				935160C42586233B00100937 /* Friend2Entity.json */,
+				935160CA2586234700100937 /* FriendEntity.swift */,
+				935160C72586234200100937 /* Data.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +175,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				935160C22586233400100937 /* FriendEntity.json in Resources */,
+				935160C52586233B00100937 /* Friend2Entity.json in Resources */,
 				9351609D25860EBB00100937 /* Preview Assets.xcassets in Resources */,
 				9351609A25860EBB00100937 /* Assets.xcassets in Resources */,
 			);
@@ -138,7 +189,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9351609825860EB800100937 /* ContentView.swift in Sources */,
+				935160B62586225400100937 /* SelectMessageFriend.swift in Sources */,
+				935160B52586225400100937 /* HomeView.swift in Sources */,
+				935160B92586225400100937 /* SelectMsgFriend.swift in Sources */,
+				935160C82586234200100937 /* Data.swift in Sources */,
+				935160B82586225400100937 /* FriendListView.swift in Sources */,
+				935160CB2586234800100937 /* FriendEntity.swift in Sources */,
+				935160B72586225400100937 /* CehckMessage.swift in Sources */,
+				935160B22586225400100937 /* WriteMessage.swift in Sources */,
+				935160B42586225400100937 /* AddFriend.swift in Sources */,
+				935160B12586225400100937 /* MenuRowView.swift in Sources */,
 				9351609625860EB800100937 /* connect_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
