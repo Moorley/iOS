@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     var body: some View {
-        NavigationView{
+        
         VStack{
             Text("私の友達")
             List{
@@ -27,7 +27,7 @@ struct HomeView: View {
             Spacer()
             MenuRowView()
         }
-    }
+    
     }
 
 }
