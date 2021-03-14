@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct FriendListView: View {
-    var friends : FriendEntity
+    var friends : Friend
     var body: some View {
         HStack(alignment: .center) {
-            Text(friends.id)
-            Text(friends.name)
+            Text(friends.name ?? "no title")
                     
         }.previewLayout(.fixed(width:400,height:100))
             
@@ -32,8 +31,4 @@ struct MsgFriendListView: View {
 }
 
 
-struct FriendListView_Previews: PreviewProvider {
-    static var previews: some View {
-        FriendListView(friends: friendStore.friends[1])
-    }
-}
+

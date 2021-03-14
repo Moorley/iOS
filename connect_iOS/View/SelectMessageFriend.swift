@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct SelectMessageFriend: View {
-    var friends : FriendEntity
+    @Environment(\.managedObjectContext) private var context
+ 
+    /// データ取得処理
+    @FetchRequest(
+        entity: Friend.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Friend.name, ascending: true)],
+        predicate: nil
+    ) private var friends: FetchedResults<Friend>
+    
     var body: some View {
         VStack{
             Text("誰に送りますか？")
             List{
-                ForEach(friendStore.friends) {friend in
-                    
+                ForEach(friends) {friend in
                         FriendListView(friends: friend)
                     
                 }
@@ -32,6 +39,6 @@ struct SelectMessageFriend: View {
 
 struct SelectMessageFriend_Previews: PreviewProvider {
     static var previews: some View {
-        SelectMessageFriend(friends: friendStore.friends[1])
+        SelectMessageFriend()
     }
 }

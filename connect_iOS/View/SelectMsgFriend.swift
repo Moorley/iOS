@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct SelectMsgFriend: View {
-    var friends : FriendEntity
     var body: some View {
         VStack{
             Text("の友達です。誰にメッセージを送信しますか？")
             List{
-                ForEach(msgFriendStore.friends) {friend in
-                    MsgFriendListView(msgFriends: friend)
-                }
+
             }
             HStack {
                 Button(action : {}){
@@ -35,6 +32,6 @@ struct SelectMsgFriend: View {
 
 struct SelectMsgFriend_Previews: PreviewProvider {
     static var previews: some View {
-        SelectMsgFriend(friends: friendStore.friends[1])
+        SelectMsgFriend()
     }
 }

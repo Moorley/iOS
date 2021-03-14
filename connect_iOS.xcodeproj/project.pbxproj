@@ -22,6 +22,8 @@
 		935160C52586233B00100937 /* Friend2Entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 935160C42586233B00100937 /* Friend2Entity.json */; };
 		935160C82586234200100937 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935160C72586234200100937 /* Data.swift */; };
 		935160CB2586234800100937 /* FriendEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935160CA2586234700100937 /* FriendEntity.swift */; };
+		93D3BD5025E686590003EAEA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93D3BD4E25E686580003EAEA /* DataModel.xcdatamodeld */; };
+		93F4388B25FA25FD001CE188 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F4388A25FA25FD001CE188 /* Persistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		935160C42586233B00100937 /* Friend2Entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Friend2Entity.json; sourceTree = "<group>"; };
 		935160C72586234200100937 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		935160CA2586234700100937 /* FriendEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendEntity.swift; sourceTree = "<group>"; };
+		93D3BD4F25E686580003EAEA /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		93F4388A25FA25FD001CE188 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 				935160C02586231200100937 /* Data */,
 				935160A62586225400100937 /* View */,
 				9351609925860EBB00100937 /* Assets.xcassets */,
+				93F4388A25FA25FD001CE188 /* Persistence.swift */,
+				93D3BD4E25E686580003EAEA /* DataModel.xcdatamodeld */,
 				9351609E25860EBB00100937 /* Info.plist */,
 				9351609B25860EBB00100937 /* Preview Content */,
 			);
@@ -192,12 +198,14 @@
 				935160B62586225400100937 /* SelectMessageFriend.swift in Sources */,
 				935160B52586225400100937 /* HomeView.swift in Sources */,
 				935160B92586225400100937 /* SelectMsgFriend.swift in Sources */,
+				93F4388B25FA25FD001CE188 /* Persistence.swift in Sources */,
 				935160C82586234200100937 /* Data.swift in Sources */,
 				935160B82586225400100937 /* FriendListView.swift in Sources */,
 				935160CB2586234800100937 /* FriendEntity.swift in Sources */,
 				935160B72586225400100937 /* CehckMessage.swift in Sources */,
 				935160B22586225400100937 /* WriteMessage.swift in Sources */,
 				935160B42586225400100937 /* AddFriend.swift in Sources */,
+				93D3BD5025E686590003EAEA /* DataModel.xcdatamodeld in Sources */,
 				935160B12586225400100937 /* MenuRowView.swift in Sources */,
 				9351609625860EB800100937 /* connect_iOSApp.swift in Sources */,
 			);
@@ -388,6 +396,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		93D3BD4E25E686580003EAEA /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				93D3BD4F25E686580003EAEA /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 93D3BD4F25E686580003EAEA /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9351608A25860EB800100937 /* Project object */;
 }
