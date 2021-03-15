@@ -8,30 +8,43 @@
 import SwiftUI
 
 struct SelectMessageFriend: View {
-    var friends : FriendEntity
+    @Environment(\.managedObjectContext) private var context
+ 
+    /// データ取得処理
+    @FetchRequest(
+        entity: Friend.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Friend.name, ascending: true)],
+        predicate: nil
+    ) private var friends: FetchedResults<Friend>
+    
     var body: some View {
-        VStack{
-            Text("誰に送りますか？")
-            List{
-                ForEach(friendStore.friends) {friend in
-                    
-                        FriendListView(friends: friend)
-                    
+        NavigationView{
+            VStack{
+                Text("誰のメッセージを送りますか？")
+                List{
+                    ForEach(friends) {friend in
+                        NavigationLink(
+                            destination: SelectMsgFriend(friend: friend),
+                            label: {
+                                FriendListView(friends: friend)
+                            })
+                    }
                 }
-            }
-            Button(action : {}){
-                Text("送信先決定")
+                Button(action : {}){
+                    Text("送信先決定")
+                
+                }
+                MenuRowView()
+                Spacer()
             
             }
-            
-            Spacer()
-            MenuRowView()
-        }
+        }.navigationBarHidden(true)
+
     }
 }
 
 struct SelectMessageFriend_Previews: PreviewProvider {
     static var previews: some View {
-        SelectMessageFriend(friends: friendStore.friends[1])
+        SelectMessageFriend()
     }
 }

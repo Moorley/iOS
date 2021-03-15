@@ -1,4 +1,5 @@
-import Foundation
+/*import Foundation
+import CoreData
 
 class FriendStore: ObservableObject {
     @Published var friends: [FriendEntity] = load("FriendEntity.json")
@@ -35,3 +36,4 @@ func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
     }
 }
+ */

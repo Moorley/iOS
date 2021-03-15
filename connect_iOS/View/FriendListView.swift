@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct FriendListView: View {
-    var friends : FriendEntity
+    var friends : Friend
     var body: some View {
         HStack(alignment: .center) {
-            Text(friends.id)
-            Text(friends.name)
+            Text(friends.name ?? "no title")
                     
         }.previewLayout(.fixed(width:400,height:100))
             
@@ -21,19 +20,14 @@ struct FriendListView: View {
 }
 
 struct MsgFriendListView: View {
-    var msgFriends : FriendEntity
+    var msgFriends : MsgFriend
     var body: some View {
         HStack(alignment: .center) {
-            Text(msgFriends.id)
-            Text(msgFriends.name)
+            Text(msgFriends.name ?? "no title")
                 
         }.previewLayout(.fixed(width:400,height:100))
     }
 }
 
 
-struct FriendListView_Previews: PreviewProvider {
-    static var previews: some View {
-        FriendListView(friends: friendStore.friends[1])
-    }
-}
+

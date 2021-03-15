@@ -15,7 +15,7 @@ struct MenuRowView: View {
                     Text("私の友達")
             }
             NavigationLink(
-                destination: SelectMessageFriend(friends: friendStore.friends[1])){
+                destination: SelectMessageFriend()){
                 Text("代理メッセージ送信")
             }
                 Text("受信メッセージ")
