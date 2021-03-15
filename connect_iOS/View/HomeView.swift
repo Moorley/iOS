@@ -18,21 +18,22 @@ struct HomeView: View {
     ) private var friends: FetchedResults<Friend>
     
     var body: some View {
-
-        VStack{
-            Text("私の友達")
-            List{
-                ForEach(friends) {friend in
-                    FriendListView(friends: friend)
+        NavigationView{
+            VStack{
+                Text("私の友達")
+                List{
+                    ForEach(friends) {friend in
+                        FriendListView(friends: friend)
+                    }
                 }
+                NavigationLink(destination: AddFriend()){
+                    Text("友達追加")
+                }
+                MenuRowView()
+                Spacer()
+            
             }
-            NavigationView{
-                NavigationLink("友達追加",
-                destination: AddFriend())
-            }
-            Spacer()
-            MenuRowView()
-        }
+        }.navigationBarHidden(true)
     
     }
 

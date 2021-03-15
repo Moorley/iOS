@@ -8,12 +8,42 @@
 import SwiftUI
 
 struct SelectMsgFriend: View {
+    @Environment(\.managedObjectContext) private var context
+    
+    /// データ取得処理
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \MsgFriend.name, ascending: true)],
+        predicate: nil
+    )
+    private var msgFriends: FetchedResults<MsgFriend>
+    @State var selections = Set<MsgFriend>()
+    
+    
+    var friend: Friend
     var body: some View {
         VStack{
-            Text("の友達です。誰にメッセージを送信しますか？")
-            List{
-
+            Text("\(friend.name ?? "no title")の友達です。誰にメッセージを送信しますか？")
+            Button(action: {
+                selections.removeAll()
+            }){
+                Text("選択解除")
             }
+            Button(action: {
+                selections.removeAll()
+                for msgFriend in msgFriends{
+                    selections.update(with: msgFriend)
+                }
+                
+            }){
+                Text("全選択")
+            }
+            List(selection: $selections){
+                ForEach(msgFriends, id: \.self) {msgFriend in
+                    MsgFriendListView(msgFriends: msgFriend)
+                }
+            }
+            .environment(\.editMode, .constant(.active))
+            
             HStack {
                 Button(action : {}){
                     Text("戻る")
@@ -30,8 +60,4 @@ struct SelectMsgFriend: View {
     }
 }
 
-struct SelectMsgFriend_Previews: PreviewProvider {
-    static var previews: some View {
-        SelectMsgFriend()
-    }
-}
+

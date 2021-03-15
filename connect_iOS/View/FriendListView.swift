@@ -20,11 +20,10 @@ struct FriendListView: View {
 }
 
 struct MsgFriendListView: View {
-    var msgFriends : FriendEntity
+    var msgFriends : MsgFriend
     var body: some View {
         HStack(alignment: .center) {
-            Text(msgFriends.id)
-            Text(msgFriends.name)
+            Text(msgFriends.name ?? "no title")
                 
         }.previewLayout(.fixed(width:400,height:100))
     }

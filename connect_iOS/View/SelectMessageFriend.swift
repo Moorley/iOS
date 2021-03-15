@@ -18,22 +18,28 @@ struct SelectMessageFriend: View {
     ) private var friends: FetchedResults<Friend>
     
     var body: some View {
-        VStack{
-            Text("誰に送りますか？")
-            List{
-                ForEach(friends) {friend in
-                        FriendListView(friends: friend)
-                    
+        NavigationView{
+            VStack{
+                Text("誰のメッセージを送りますか？")
+                List{
+                    ForEach(friends) {friend in
+                        NavigationLink(
+                            destination: SelectMsgFriend(friend: friend),
+                            label: {
+                                FriendListView(friends: friend)
+                            })
+                    }
                 }
-            }
-            Button(action : {}){
-                Text("送信先決定")
+                Button(action : {}){
+                    Text("送信先決定")
+                
+                }
+                MenuRowView()
+                Spacer()
             
             }
-            
-            Spacer()
-            MenuRowView()
-        }
+        }.navigationBarHidden(true)
+
     }
 }
 
