@@ -10,6 +10,7 @@ import SwiftUI
 struct WriteMessage: View {
     @State var relation : String = ""
     @State var message : String = ""
+    @Binding var msgFriend : Set<MsgFriend>
     var body: some View {
         
         VStack {
@@ -30,14 +31,8 @@ struct WriteMessage: View {
                 
                 }
             }
-            Spacer()
-            MenuRowView()
         }
     }
 }
 
-struct WriteMessage_Previews: PreviewProvider {
-    static var previews: some View {
-        WriteMessage()
-    }
-}
+
