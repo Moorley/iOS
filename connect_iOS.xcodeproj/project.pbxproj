@@ -24,6 +24,7 @@
 		935160CB2586234800100937 /* FriendEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935160CA2586234700100937 /* FriendEntity.swift */; };
 		935D83FD25FEF52400970A98 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D83FC25FEF52400970A98 /* Setting.swift */; };
 		935D840025FF06FC00970A98 /* Friend+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D83FF25FF06FC00970A98 /* Friend+Extension.swift */; };
+		937183512600D0AE00B51911 /* MsgFriend+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937183502600D0AE00B51911 /* MsgFriend+Extension.swift */; };
 		93D3BD5025E686590003EAEA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93D3BD4E25E686580003EAEA /* DataModel.xcdatamodeld */; };
 		93F4388B25FA25FD001CE188 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F4388A25FA25FD001CE188 /* Persistence.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		935160CA2586234700100937 /* FriendEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendEntity.swift; sourceTree = "<group>"; };
 		935D83FC25FEF52400970A98 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		935D83FF25FF06FC00970A98 /* Friend+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+Extension.swift"; sourceTree = "<group>"; };
+		937183502600D0AE00B51911 /* MsgFriend+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MsgFriend+Extension.swift"; sourceTree = "<group>"; };
 		93D3BD4F25E686580003EAEA /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		93F4388A25FA25FD001CE188 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +128,7 @@
 				935160CA2586234700100937 /* FriendEntity.swift */,
 				935160C72586234200100937 /* Data.swift */,
 				935D83FF25FF06FC00970A98 /* Friend+Extension.swift */,
+				937183502600D0AE00B51911 /* MsgFriend+Extension.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				935160B72586225400100937 /* CehckMessage.swift in Sources */,
 				935160B22586225400100937 /* WriteMessage.swift in Sources */,
 				935160B42586225400100937 /* AddFriend.swift in Sources */,
+				937183512600D0AE00B51911 /* MsgFriend+Extension.swift in Sources */,
 				935D840025FF06FC00970A98 /* Friend+Extension.swift in Sources */,
 				93D3BD5025E686590003EAEA /* DataModel.xcdatamodeld in Sources */,
 				935160B12586225400100937 /* MenuRowView.swift in Sources */,

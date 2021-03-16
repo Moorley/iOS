@@ -47,8 +47,7 @@ struct AddFriend: View {
     }
     private func addFriend(addName :String) {
         withAnimation {
-            let newFriend = Friend(context: viewContext)
-            newFriend.name = addName
+            Friend.create(in: viewContext, name: addName)
 
             do {
                 try viewContext.save()
@@ -62,8 +61,7 @@ struct AddFriend: View {
     }
     private func addMsgFriend(addName :String) {
         withAnimation {
-            let newFriend = MsgFriend(context: viewContext)
-            newFriend.name = addName
+            MsgFriend.create(in: viewContext, name: addName)
 
             do {
                 try viewContext.save()

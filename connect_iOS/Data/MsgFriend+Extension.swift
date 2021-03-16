@@ -1,16 +1,15 @@
 //
-//  Friend+Extension.swift
+//  MsgFriend+Extension.swift
 //  connect_iOS
 //
-//  Created by 芥川力也 on 2021/03/15.
+//  Created by 芥川力也 on 2021/03/16.
 //
 
 import Foundation
 import CoreData
 import SwiftUI
 
-
-extension Friend{
+extension MsgFriend{
     
     static func create(in managedObjectContext: NSManagedObjectContext,
                        name:String){
@@ -26,5 +25,3 @@ extension Friend{
         }
     }
 }
-
-
