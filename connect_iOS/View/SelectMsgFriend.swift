@@ -8,33 +8,72 @@
 import SwiftUI
 
 struct SelectMsgFriend: View {
-    var friends : FriendEntity
+    @Environment(\.managedObjectContext) private var context
+    
+    /// データ取得処理
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \MsgFriend.name, ascending: true)],
+        
+        predicate: nil
+    )
+    private var msgFriends: FetchedResults<MsgFriend>
+    @State var selections = Set<MsgFriend>()
+    
+    
+    @State var friend: Friend
+    
+    
     var body: some View {
-        VStack{
-            Text("の友達です。誰にメッセージを送信しますか？")
-            List{
-                ForEach(msgFriendStore.friends) {friend in
-                    MsgFriendListView(msgFriends: friend)
+        NavigationView{
+            VStack{
+                Text("\(friend.name ?? "no title")の友達です。誰にメッセージを送信しますか？")
+                HStack{
+                    Button(action: {
+                        selections.removeAll()
+                    }){
+                        Text("選択解除")
+                    }
+                    Button(action: {
+                        selections.removeAll()
+                        for msgFriend in msgFriends{
+                            selections.update(with: msgFriend)
+                        }
+                        
+                    }){
+                        Text("全選択")
+                    }
+                    
                 }
-            }
-            HStack {
-                Button(action : {}){
-                    Text("戻る")
-                }
-                Button(action : {}){
-                    Text("メッセージの入力")
                 
+                List(selection: $selections){
+                    ForEach(msgFriends, id: \.self) {msgFriend in
+                        MsgFriendListView(msgFriends: msgFriend)
+                    }
+                }
+                .environment(\.editMode, .constant(.active))
+                
+                HStack {
+                    Button(action : {
+                        
+                    }){
+                        Text("戻る")
+                    }
+                    NavigationLink(destination: WriteMessage(friend : $friend).onAppear{
+                        saveMsgFriend(msgFriend: selections)
+                    }){
+                        Text("メッセージの入力")
+                    }
+
                 }
             }
-            
-            Spacer()
-            MenuRowView()
-        }
+        }.navigationBarHidden(true)
+        Spacer()
+        MenuRowView()
+    }
+    func saveMsgFriend(msgFriend : Set<MsgFriend>){
+        let arrayMsgFriend = Array(msgFriend)
+        MsgFriend.changeSend(in: context, msgFriends: arrayMsgFriend)
     }
 }
 
-struct SelectMsgFriend_Previews: PreviewProvider {
-    static var previews: some View {
-        SelectMsgFriend(friends: friendStore.friends[1])
-    }
-}
+
