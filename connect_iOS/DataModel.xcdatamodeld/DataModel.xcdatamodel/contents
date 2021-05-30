@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Chat" representedClassName="Chat" syncable="YES" codeGenerationType="class">
-        <attribute name="comment" optional="YES" attributeType="String"/>
-        <attribute name="friendName" optional="YES" attributeType="String"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20E241" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Chat" representedClassName="Chat" syncable="YES">
+        <attribute name="from" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
-        <attribute name="sendme" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="message" optional="YES" attributeType="String"/>
+        <attribute name="relationShip" optional="YES" attributeType="String"/>
         <attribute name="to" optional="YES" attributeType="String"/>
-        <relationship name="msgFriend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MsgFriend"/>
+        <relationship name="msgFriend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Chat" inverseName="msgFriend" inverseEntity="Chat"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Chat" inverseName="relationship" inverseEntity="Chat"/>
     </entity>
-    <entity name="Friend" representedClassName="Friend" syncable="YES" codeGenerationType="class">
+    <entity name="Friend" representedClassName="Friend" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="MsgFriend" representedClassName="MsgFriend" syncable="YES" codeGenerationType="class">
+    <entity name="MsgFriend" representedClassName="MsgFriend" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sendUser" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Chat" positionX="-346.52197265625" positionY="-46.36312866210938" width="128" height="119"/>
+        <element name="Chat" positionX="-346.52197265625" positionY="-46.36312866210938" width="128" height="134"/>
         <element name="Friend" positionX="49.30908203125" positionY="75.07733154296875" width="128" height="59"/>
-        <element name="MsgFriend" positionX="-150.943115234375" positionY="72.30349731445312" width="128" height="59"/>
+        <element name="MsgFriend" positionX="-150.943115234375" positionY="72.30349731445312" width="128" height="74"/>
     </elements>
 </model>

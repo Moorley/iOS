@@ -15,7 +15,8 @@ struct SelectMessageFriend: View {
         entity: Friend.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Friend.name, ascending: true)],
         predicate: nil
-    ) private var friends: FetchedResults<Friend>
+    )
+    private var friends: FetchedResults<Friend>
     
     var body: some View {
         NavigationView{
