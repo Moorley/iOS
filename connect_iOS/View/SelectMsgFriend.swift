@@ -13,13 +13,16 @@ struct SelectMsgFriend: View {
     /// データ取得処理
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \MsgFriend.name, ascending: true)],
+        
         predicate: nil
     )
     private var msgFriends: FetchedResults<MsgFriend>
     @State var selections = Set<MsgFriend>()
     
     
-    var friend: Friend
+    @State var friend: Friend
+    
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -55,7 +58,9 @@ struct SelectMsgFriend: View {
                     }){
                         Text("戻る")
                     }
-                    NavigationLink(destination: WriteMessage(msgFriend: $selections)){
+                    NavigationLink(destination: WriteMessage(friend : $friend).onAppear{
+                        saveMsgFriend(msgFriend: selections)
+                    }){
                         Text("メッセージの入力")
                     }
 
@@ -64,6 +69,10 @@ struct SelectMsgFriend: View {
         }.navigationBarHidden(true)
         Spacer()
         MenuRowView()
+    }
+    func saveMsgFriend(msgFriend : Set<MsgFriend>){
+        let arrayMsgFriend = Array(msgFriend)
+        MsgFriend.changeSend(in: context, msgFriends: arrayMsgFriend)
     }
 }
 

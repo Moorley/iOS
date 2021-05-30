@@ -1,15 +1,28 @@
 //
-//  MsgFriend+Extension.swift
+//  MsgFriend+CoreDataProperties.swift
 //  connect_iOS
 //
-//  Created by 芥川力也 on 2021/03/16.
+//  Created by 芥川力也 on 2021/05/30.
+//
 //
 
 import Foundation
 import CoreData
-import SwiftUI
+
 
 extension MsgFriend {
+
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<MsgFriend> {
+        return NSFetchRequest<MsgFriend>(entityName: "MsgFriend")
+    }
+
+    @NSManaged public var id: String?
+    @NSManaged public var name: String?
+    @NSManaged public var sendUser: Bool
+
+}
+
+extension MsgFriend : Identifiable {
     
     static func create(in managedObjectContext: NSManagedObjectContext,
                        name:String){
@@ -30,9 +43,9 @@ extension MsgFriend {
         for msgFriend in msgFriends{
             let fetchRequest = NSFetchRequest<MsgFriend>(entityName: "MsgFriend")
 
-            fetchRequest.predicate = NSPredicate(format: "name = %@","name","msgFriend.name")
+            fetchRequest.predicate = NSPredicate(format: "name CONTAINS %@",msgFriend.name as! CVarArg)
             
-            let prMsgFriends = try? managedObjectContext.fetch(fetchRequest)
+            let prMsgFriends = try? managedObjectContext.fetch(fetchRequest) as? [MsgFriend]
             if((prMsgFriends?.isEmpty) != nil){
                 for i in 0..<prMsgFriends!.count{
                     prMsgFriends?[i].sendUser = true
