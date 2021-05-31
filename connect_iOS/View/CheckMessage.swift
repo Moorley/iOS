@@ -19,6 +19,7 @@ struct CheckMessage: View {
         predicate: NSPredicate(format:"sendUser == true"),
         animation: .default
     ) private var msgFriends: FetchedResults<MsgFriend>
+
     
     var body: some View {
         VStack {
@@ -31,12 +32,14 @@ struct CheckMessage: View {
                 }
             }
 
-            }
+        }
             HStack {
                 Button(action : {}){
                     Text("戻る")
                 }
                 Button(action : {
+                        addChat()
+                    
 
                 }){
                     Text("メッセージの送信")
@@ -44,23 +47,26 @@ struct CheckMessage: View {
                 }
             }
 
-        }
     }
-    private func addChat(from: Set<MsgFriend>, message : String, relation: String) {
     
+    private func addChat() {
+        for msgFriend in msgFriends{
             withAnimation {
+                Chat.create(in: context, to: msgFriend, from: "me", message: message, relationship: relation)
 
-
-                do {
-                    
-                } catch {
-                    // Replace this implementation with code to handle the error appropriately.
-                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                    let nsError = error as NSError
-                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-                }
+                    do {
+                        try context.save()
+                    } catch {
+                        // Replace this implementation with code to handle the error appropriately.
+                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                        let nsError = error as NSError
+                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                    }
             }
         }
+    }
+
+}
     
 
 
