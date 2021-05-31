@@ -28,22 +28,26 @@ extension Chat {
 
 extension Chat : Identifiable {
     static func create(in managedObjectContext: NSManagedObjectContext,
-                       to:String,
+                       to:MsgFriend,
                        from:String,
                        message:String,
                        relationship:String){
-        let chat = self.init(context: managedObjectContext)
-        chat.to = to
-        chat.message = message
-        chat.from = from
-        chat.relationShip = relationship
-        chat.id = UUID().uuidString
+
+            let chat = self.init(context: managedObjectContext)
+            chat.to = to.name
+            chat.message = message
+            chat.from = from
+            chat.relationShip = relationship
+            chat.id = UUID().uuidString
         
-        do {
-            try  managedObjectContext.save()
-        } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
+            do {
+                try  managedObjectContext.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        
     }
+        
+    
 }

@@ -18,7 +18,11 @@ struct MenuRowView: View {
                 destination: SelectMessageFriend()){
                 Text("代理メッセージ送信")
             }
+            NavigationLink(
+                destination: ChatView()){
                 Text("受信メッセージ")
+            }
+            
                 Text("私の設定")
         }.previewLayout(.fixed(width:400,height:100))
         
